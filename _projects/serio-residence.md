@@ -9,5 +9,5 @@ description: The interiors of this residence are designed around a warm,
   everyday comfort. Soft neutral tones, natural wood finishes and subtle
   metallic accents create a calm visual language that continues throughout the
   home.
-featured: true
+featured: false
 ---
