@@ -1,0 +1,60 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+site_url: https://studioblankbox.com
+display_url: https://studioblankbox.com
+logo_url: https://static.wixstatic.com/media/bcbb68_6b759540a61140c299fd14d066f36ebe~mv2.png
+
+collections:
+
+  - name: "projects"
+    label: "Projects"
+    label_singular: "Project"
+    folder: "_projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Project Name", name: "title", widget: "string", hint: "e.g. Dr. Patil Ophthalmic Institute" }
+      - { label: "Category", name: "category", widget: "select",
+          options: ["Residential Interior","Hospital Interior","Commercial Interior","Specialized Vehicle Design","Institutional Interiors","Residential Architecture","Hospital Architecture","Institutional Architecture","Residential Landscape","Public Landscape Design"] }
+      - { label: "Location", name: "location", widget: "string", hint: "e.g. Pune, Maharashtra" }
+      - { label: "Year", name: "year", widget: "string", hint: "e.g. 2025" }
+      - { label: "Project Image", name: "image", widget: "image" }
+      - { label: "Short Description", name: "description", widget: "text", hint: "2-3 lines about the project" }
+      - { label: "Featured on Homepage?", name: "featured", widget: "boolean", default: false }
+
+  - name: "services"
+    label: "Services"
+    label_singular: "Service"
+    folder: "_services"
+    create: false
+    fields:
+      - { label: "Service Name", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Order", name: "order", widget: "number" }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "Contact Information"
+        name: "contact"
+        file: "_data/contact.yml"
+        fields:
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "WhatsApp Number", name: "whatsapp", widget: "string" }
+          - { label: "Address", name: "address", widget: "text" }
+          - { label: "Instagram URL", name: "instagram", widget: "string" }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+      - label: "Stats"
+        name: "stats"
+        file: "_data/stats.yml"
+        fields:
+          - { label: "Designs Delivered", name: "designs", widget: "number", default: 30 }
+          - { label: "Years Experience", name: "years", widget: "number", default: 8 }
+          - { label: "Sq.ft Under Planning (in thousands)", name: "planning", widget: "number", default: 600 }
+          - { label: "Sq.ft Delivered (in thousands)", name: "delivered", widget: "number", default: 125 }
